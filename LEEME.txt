@@ -1,0 +1,53 @@
+=====================================================
+ LETIYVICFLIX — Cómo usar vuestra plataforma
+=====================================================
+
+ABRIR LA WEB
+------------
+Doble clic en "index.html" y se abre en el navegador.
+No necesita internet ni instalar nada.
+
+Al abrir: pantalla "¿Quién está viendo?" con los perfiles
+(se editan arriba de data.js, en PERFILES).
+
+PERFIL CON CLAVE: el perfil de Leti sale con candado y pide
+la clave ESPRITSEL25 (da igual mayúsculas o minúsculas; no
+pide usuario). Se cambia o se quita en data.js, campo "clave".
+Puedes poner clave a cualquier otro perfil añadiéndole ese campo.
+
+Al elegir un perfil (y acertar la clave si la tiene),
+suena el "ta-dum" y sale el logo LETIYVICFLIX con el efecto
+de zoom y destellos, y entra la página principal.
+
+La fila "Top 10 en vuestro sofá hoy" se genera sola con los
+títulos de mayor "match". Y la fila "Continuar viendo" muestra
+una barra roja de progreso (campo "progreso" en data.js).
+
+AÑADIR VUESTRAS FOTOS Y VÍDEOS
+------------------------------
+1. Copia tus fotos (.jpg, .png) y vídeos (.mp4) a la carpeta "media".
+2. Abre "data.js" con el Bloc de notas.
+3. Cada título tiene un campo "archivo". Pon ahí el nombre de tu
+   archivo, por ejemplo:  archivo: "media/roma.jpg"
+4. Guarda y recarga la página (F5).
+
+Si un título aún no tiene su archivo, al abrirlo la web te dice
+qué nombre de archivo espera. Así es fácil ir rellenando.
+
+AÑADIR O CAMBIAR TÍTULOS
+------------------------
+Todo el catálogo está en "data.js", con instrucciones arriba del
+archivo. Copia un bloque { ... } existente, pégalo y cambia:
+  - titulo, subtitulo, descripcion (las bromas van aquí)
+  - tipo: "video", "foto" o "texto"
+  - color y emoji de la carátula (o pon una imagen con "portada")
+
+Las carátulas se generan solas: no hace falta diseñar nada.
+
+TRUCOS
+------
+- "destacado: true" pone ese título en el banner grande de arriba.
+- tipo "texto" muestra una carta/mensaje (ideal para dedicatorias).
+- "match: 100" es el porcentaje de coincidencia de broma.
+- Para enseñarla a la familia: llévala en un USB o comparte la
+  carpeta entera; funciona en cualquier ordenador.

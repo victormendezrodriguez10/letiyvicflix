@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LetiyvicFlix</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='14' fill='black'/><text x='50' y='76' font-size='72' text-anchor='middle' fill='%23e50914' font-family='Impact,Arial Black' font-weight='900'>L</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ PANTALLA DE PERFILES ============ -->
+  <div id="pantalla-perfiles">
+    <div class="perfiles-logo logo-marca">LETIYVICFLIX</div>
+    <h1 class="perfiles-titulo">¿Quién está viendo?</h1>
+    <div class="perfiles-lista" id="perfiles-lista"></div>
+    <button class="perfiles-gestionar">ADMINISTRAR PERFILES</button>
+  </div>
+
+  <!-- ============ PANTALLA DE CLAVE (perfil bloqueado) ============ -->
+  <div id="pantalla-clave" class="oculto">
+    <div class="perfiles-logo logo-marca">LETIYVICFLIX</div>
+    <button class="clave-volver" id="clave-volver">‹ Volver</button>
+    <div class="clave-caja">
+      <div class="clave-avatar" id="clave-avatar">🔒</div>
+      <h1 class="clave-titulo">Este perfil está bloqueado</h1>
+      <p class="clave-sub" id="clave-sub">Introduce la clave para continuar.</p>
+      <form class="clave-form" id="clave-form">
+        <input type="password" id="clave-input" class="clave-input"
+               placeholder="Clave" autocomplete="off" />
+        <button type="submit" class="btn btn-blanco clave-btn">Entrar</button>
+      </form>
+      <p class="clave-error oculto" id="clave-error">Clave incorrecta. Inténtalo de nuevo.</p>
+    </div>
+  </div>
+
+  <!-- ============ INTRO (logo con efecto) ============ -->
+  <div id="intro" class="oculto">
+    <div class="intro-streaks" id="intro-streaks"></div>
+    <div class="intro-logo logo-marca" id="intro-logo">LETIYVICFLIX</div>
+  </div>
+
+  <!-- ============ APP PRINCIPAL ============ -->
+  <div id="app" class="oculto">
+
+    <header class="topbar" id="topbar">
+      <div class="topbar-left">
+        <span class="logo logo-marca">LETIYVICFLIX</span>
+        <nav class="menu">
+          <a href="#" class="activo">Inicio</a>
+          <a href="#">Series</a>
+          <a href="#">Películas</a>
+          <a href="#">Novedades populares</a>
+          <a href="#">Mi lista</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="icono">🔍</span>
+        <span class="icono">🔔</span>
+        <span class="avatar-mini" id="avatar-mini">❤️</span>
+        <span class="caret">▾</span>
+      </div>
+    </header>
+
+    <!-- Banner destacado -->
+    <section class="hero" id="hero">
+      <div class="hero-fondo" id="hero-fondo"></div>
+      <div class="hero-degradado"></div>
+      <div class="hero-contenido">
+        <p class="hero-marca"><span class="n-rojo">L</span><span class="serie-txt">SERIE</span></p>
+        <h1 class="hero-titulo" id="hero-titulo"></h1>
+        <p class="hero-sub" id="hero-sub"></p>
+        <p class="hero-desc" id="hero-desc"></p>
+        <div class="hero-botones">
+          <button class="btn btn-blanco" id="hero-play"><span class="btn-ico">▶</span> Reproducir</button>
+          <button class="btn btn-gris" id="hero-info"><span class="btn-ico">ⓘ</span> Más información</button>
+        </div>
+      </div>
+      <div class="hero-edad"><span>16+</span></div>
+    </section>
+
+    <!-- Filas (se generan solas desde data.js) -->
+    <main id="filas"></main>
+
+    <footer class="pie">
+      <div class="pie-redes">📷 &nbsp; 🐦 &nbsp; 📺</div>
+      <div class="pie-columnas">
+        <a href="#">Audiodescripción</a><a href="#">Relaciones con inversores (el sofá)</a><a href="#">Avisos legales</a>
+        <a href="#">Centro de ayuda</a><a href="#">Empleo (no hay vacantes)</a><a href="#">Preferencias de cookies (de chocolate)</a>
+        <a href="#">Tarjetas regalo</a><a href="#">Condiciones de uso: quererse</a><a href="#">Información corporativa</a>
+      </div>
+      <p class="pie-copy">© LetiyvicFlix, desde que nos conocimos. Suscripción no cancelable.</p>
+    </footer>
+  </div>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal-fondo oculto" id="modal-fondo">
+    <div class="modal" id="modal">
+      <button class="modal-cerrar" id="modal-cerrar">✕</button>
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-cuerpo">
+        <h2 class="modal-titulo" id="modal-titulo"></h2>
+        <div class="modal-meta" id="modal-meta"></div>
+        <div class="modal-chips" id="modal-chips"></div>
+        <p class="modal-desc" id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
