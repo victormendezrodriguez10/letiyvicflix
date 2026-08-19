@@ -270,12 +270,18 @@ function pintarFilas() {
     const scroll = document.createElement("div");
     scroll.className = "fila-scroll";
 
+    // La barra roja de progreso sale en cualquier título con campo "progreso"
     const esContinuar = /continuar/i.test(grupo.fila);
     grupo.items.forEach((item, i) => {
-      const opciones = esContinuar
-        ? { progreso: item.progreso != null ? item.progreso : 30 + ((i * 27) % 55) }
-        : {};
-      scroll.appendChild(crearTarjeta(item, opciones));
+      const progreso =
+        item.progreso != null
+          ? item.progreso
+          : esContinuar
+          ? 30 + ((i * 27) % 55)
+          : null;
+      scroll.appendChild(
+        crearTarjeta(item, progreso != null ? { progreso } : {})
+      );
     });
 
     fila.append(titulo, scroll);
