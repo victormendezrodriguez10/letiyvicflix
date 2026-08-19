@@ -37,10 +37,9 @@ const PERFIL = {
 // Si un perfil lleva "clave", sale con candado y pide esa clave
 // para entrar (da igual las mayúsculas/minúsculas).
 const PERFILES = [
-  { nombre: "Leti", emoji: "👩🏻", clave: "ESPRITSEL25" },
-  { nombre: "Vic", emoji: "🧔🏻" },
-  { nombre: "Familia", emoji: "👨‍👩‍👧‍👦" },
-  { nombre: "Modo lacrimógeno", emoji: "🥹" },
+  { nombre: "Viajes", emoji: "✈️", clave: "ESPRITSEL25" },
+  { nombre: "LetiyVic", emoji: "❤️", clave: "MOTILLA1" },
+  { nombre: "Risas", emoji: "😂", clave: "CHICOTE123" },
 ];
 
 const CATALOGO = [
