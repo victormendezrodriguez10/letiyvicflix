@@ -748,6 +748,57 @@ body {
   display: block;
 }
 
+/* Galería (pase de fotos con flechas) */
+.galeria {
+  position: relative;
+  width: 100%;
+}
+.galeria-visor {
+  width: 100%;
+  min-height: 200px;
+  max-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.galeria-visor img,
+.galeria-visor video {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+}
+.galeria-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20,20,20,.75);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.galeria-btn:hover { background: rgba(60,60,60,.9); }
+.galeria-ant { left: 12px; }
+.galeria-sig { right: 12px; }
+.galeria-contador {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  z-index: 4;
+  background: rgba(0,0,0,.65);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: .8rem;
+  color: #ddd;
+}
+
 .modal-texto {
   width: 100%;
   padding: 48px 40px;

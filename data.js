@@ -20,10 +20,13 @@
 //  match       : número (porcentaje de coincidencia, broma Netflix)
 //  anio        : año
 //  duracion    : texto libre ("2 temporadas", "1 h 43 min", "∞")
-//  tipo        : "video" | "foto" | "texto"
+//  tipo        : "video" | "foto" | "texto" | "galeria"
 //  archivo     : para video/foto → ruta dentro de /media
 //                (ej. "media/viajes/roma.jpg"). Si el archivo no
 //                existe todavía, se muestra un aviso simpático.
+//  archivos    : para tipo "galeria" → lista de rutas; se ven como
+//                pase de fotos con flechas (admite .mp4 mezclados):
+//                archivos: ["media/viajes/roma/1.jpg", "media/viajes/roma/2.jpg"]
 //  texto       : para tipo "texto" → el texto que se muestra
 //                (admite saltos de línea con \n)
 //  portada     : (opcional) imagen para la carátula. Si no la pones,

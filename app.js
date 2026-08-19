@@ -387,6 +387,8 @@ function abrirModal(item) {
     div.className = "modal-texto";
     div.textContent = item.texto || "(Aún no hay texto: edítalo en data.js)";
     media.appendChild(div);
+  } else if (item.tipo === "galeria") {
+    media.appendChild(crearGaleria(item));
   } else if (item.tipo === "video") {
     const video = document.createElement("video");
     video.src = item.archivo;
@@ -449,9 +451,77 @@ function avisoArchivo(item) {
   return div;
 }
 
+// ---------- Galería (pase de fotos/vídeos con flechas) ----------
+
+let galeriaNav = null; // {ant, sig} mientras hay una galería abierta
+
+function crearGaleria(item) {
+  const rutas = item.archivos || [];
+  const cont = document.createElement("div");
+  cont.className = "galeria";
+
+  const visor = document.createElement("div");
+  visor.className = "galeria-visor";
+
+  const contador = document.createElement("div");
+  contador.className = "galeria-contador";
+
+  let indice = 0;
+
+  function mostrar(i) {
+    indice = (i + rutas.length) % rutas.length;
+    const ruta = rutas[indice];
+    visor.innerHTML = "";
+
+    if (/\.(mp4|webm|mov)$/i.test(ruta)) {
+      const video = document.createElement("video");
+      video.src = ruta;
+      video.controls = true;
+      video.autoplay = true;
+      video.onerror = () =>
+        visor.replaceChildren(avisoArchivo({ tipo: "video", archivo: ruta }));
+      visor.appendChild(video);
+    } else {
+      const img = document.createElement("img");
+      img.src = ruta;
+      img.alt = `${item.titulo} (${indice + 1})`;
+      img.onerror = () =>
+        visor.replaceChildren(avisoArchivo({ tipo: "foto", archivo: ruta }));
+      visor.appendChild(img);
+    }
+    contador.textContent = `${indice + 1} / ${rutas.length}`;
+  }
+
+  const ant = () => mostrar(indice - 1);
+  const sig = () => mostrar(indice + 1);
+  galeriaNav = { ant, sig };
+
+  const btnAnt = document.createElement("button");
+  btnAnt.className = "galeria-btn galeria-ant";
+  btnAnt.textContent = "‹";
+  btnAnt.addEventListener("click", (e) => { e.stopPropagation(); ant(); });
+
+  const btnSig = document.createElement("button");
+  btnSig.className = "galeria-btn galeria-sig";
+  btnSig.textContent = "›";
+  btnSig.addEventListener("click", (e) => { e.stopPropagation(); sig(); });
+
+  cont.append(visor, contador);
+  if (rutas.length > 1) cont.append(btnAnt, btnSig);
+
+  if (rutas.length) {
+    mostrar(0);
+  } else {
+    visor.innerHTML = `<div class="modal-aviso"><span class="grande">🖼️</span>
+      Esta galería aún no tiene archivos: añádelos en data.js (campo "archivos").</div>`;
+  }
+  return cont;
+}
+
 function cerrarModal() {
   const video = $("modal-media").querySelector("video");
   if (video) video.pause();
+  galeriaNav = null;
   $("modal-fondo").classList.add("oculto");
   document.body.style.overflow = "";
 }
@@ -462,6 +532,10 @@ $("modal-fondo").addEventListener("click", (e) => {
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") cerrarModal();
+  if (galeriaNav && !$("modal-fondo").classList.contains("oculto")) {
+    if (e.key === "ArrowLeft") galeriaNav.ant();
+    if (e.key === "ArrowRight") galeriaNav.sig();
+  }
 });
 
 // ============================================================
