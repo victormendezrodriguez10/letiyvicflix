@@ -53,9 +53,21 @@ function elegirPerfil(perfil, clase) {
 function entrarConPerfil(perfil, clase) {
   $("avatar-mini").textContent = perfil.emoji;
   $("avatar-mini").className = "avatar-mini perfil-avatar " + clase;
+
+  // Cada perfil ve solo sus filas del catálogo
+  const catalogo = catalogoDe(perfil);
+  pintarHero(catalogo);
+  pintarFilas(catalogo);
+
   $("pantalla-perfiles").classList.add("oculto");
   $("pantalla-clave").classList.add("oculto");
   lanzarIntro();
+}
+
+function catalogoDe(perfil) {
+  if (!perfil || !perfil.filas || !perfil.filas.length) return CATALOGO;
+  const filtrado = CATALOGO.filter((g) => perfil.filas.includes(g.fila));
+  return filtrado.length ? filtrado : CATALOGO;
 }
 
 // ---------- Pantalla de perfil bloqueado ----------
@@ -165,6 +177,13 @@ window.addEventListener("scroll", () => {
   $("topbar").classList.toggle("solida", window.scrollY > 40);
 });
 
+// El avatar de la esquina vuelve a la pantalla de perfiles
+$("avatar-mini").addEventListener("click", () => {
+  window.scrollTo(0, 0);
+  $("app").classList.add("oculto");
+  $("pantalla-perfiles").classList.remove("oculto");
+});
+
 // ============================================================
 //  CARÁTULAS
 // ============================================================
@@ -255,11 +274,12 @@ function crearTarjeta(item, opciones = {}) {
 //  FILAS
 // ============================================================
 
-function pintarFilas() {
+function pintarFilas(catalogo = CATALOGO) {
   const cont = $("filas");
-  const todos = CATALOGO.flatMap((g) => g.items);
+  cont.innerHTML = "";
+  const todos = catalogo.flatMap((g) => g.items);
 
-  CATALOGO.forEach((grupo, gi) => {
+  catalogo.forEach((grupo, gi) => {
     const fila = document.createElement("section");
     fila.className = "fila";
 
@@ -296,16 +316,16 @@ function crearFilaTop10(todos) {
   const fila = document.createElement("section");
   fila.className = "fila fila-top10";
 
-  const titulo = document.createElement("h2");
-  titulo.className = "fila-titulo";
-  titulo.textContent = "Top 10 en vuestro sofá hoy";
-
-  const scroll = document.createElement("div");
-  scroll.className = "fila-scroll";
-
   const top = [...todos]
     .sort((a, b) => (b.match || 0) - (a.match || 0))
     .slice(0, 10);
+
+  const titulo = document.createElement("h2");
+  titulo.className = "fila-titulo";
+  titulo.textContent = `Top ${top.length} en vuestro sofá hoy`;
+
+  const scroll = document.createElement("div");
+  scroll.className = "fila-scroll";
 
   top.forEach((item, i) => {
     const wrap = document.createElement("div");
@@ -327,9 +347,11 @@ function crearFilaTop10(todos) {
 //  BANNER DESTACADO
 // ============================================================
 
-function pintarHero() {
-  const todos = CATALOGO.flatMap((g) => g.items);
-  const destacado = todos.find((i) => i.destacado) || todos[0];
+function pintarHero(catalogo = CATALOGO) {
+  const todos = catalogo.flatMap((g) => g.items);
+  const destacado =
+    todos.find((i) => i.destacado) ||
+    [...todos].sort((a, b) => (b.match || 0) - (a.match || 0))[0];
   if (!destacado) return;
 
   $("hero-titulo").textContent = destacado.titulo;
@@ -338,14 +360,18 @@ function pintarHero() {
 
   const fondo = $("hero-fondo");
   if (destacado.portada) {
+    fondo.className = "hero-fondo";
+    fondo.innerHTML = "";
     fondo.style.backgroundImage = `url("${destacado.portada}")`;
   } else {
+    fondo.style.backgroundImage = "";
     fondo.className = `hero-fondo c-${destacado.color || "rojo"}`;
     fondo.innerHTML = `<div class="hero-emoji">${destacado.emoji || "🎬"}</div>`;
   }
 
-  $("hero-play").addEventListener("click", () => abrirModal(destacado));
-  $("hero-info").addEventListener("click", () => abrirModal(destacado));
+  // onclick (y no addEventListener) para no acumular al cambiar de perfil
+  $("hero-play").onclick = () => abrirModal(destacado);
+  $("hero-info").onclick = () => abrirModal(destacado);
 }
 
 // ============================================================
@@ -442,6 +468,5 @@ document.addEventListener("keydown", (e) => {
 //  ARRANQUE
 // ============================================================
 
+// El banner y las filas se pintan al elegir perfil (cada uno ve lo suyo)
 pintarPerfiles();
-pintarHero();
-pintarFilas();

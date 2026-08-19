@@ -46,10 +46,12 @@ const PERFIL = {
 // Perfiles de la pantalla "¿Quién está viendo?"
 // Si un perfil lleva "clave", sale con candado y pide esa clave
 // para entrar (da igual las mayúsculas/minúsculas).
+// "filas" indica qué filas del catálogo ve ese perfil (por su nombre
+// exacto). Un perfil sin "filas" lo vería todo.
 const PERFILES = [
-  { nombre: "Viajes", emoji: "✈️", clave: "ESPRITSEL25" },
-  { nombre: "LetiyVic", emoji: "❤️", clave: "MOTILLA1" },
-  { nombre: "Risas", emoji: "😂", clave: "CHICOTE123" },
+  { nombre: "Viajes", emoji: "✈️", clave: "ESPRITSEL25", filas: ["Viajes"] },
+  { nombre: "LetiyVic", emoji: "❤️", clave: "MOTILLA1", filas: ["Momentos LetiyVic"] },
+  { nombre: "Risas", emoji: "😂", clave: "CHICOTE123", filas: ["Risas"] },
 ];
 
 const CATALOGO = [
