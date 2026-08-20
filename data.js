@@ -52,7 +52,7 @@ const PERFILES = [
   { nombre: "Viajes", emoji: "✈️", foto: "media/viajes/paris/img_1049.jpg", clave: "ESPRITSEL25", filas: ["Viajes"] },
   { nombre: "LetiyVic", emoji: "❤️", foto: "media/letiyvic/img_9078.jpg", clave: "MOTILLA1", filas: ["Momentos LetiyVic"] },
   { nombre: "Risas", emoji: "😂", foto: "media/risas/img_7889.jpg", clave: "CHICOTE123", filas: ["Risas"] },
-  { nombre: "Ruta de Pintxos 2026", emoji: "🍢", foto: "media/viajes/pamplona-logrono/img_6448.jpg", clave: "PINTXOS2026", filas: ["Ruta de Pintxos 2026"] },
+  { nombre: "Ruta de Pintxos 2026", emoji: "🍢", foto: "media/viajes/pamplona-logrono/img_6448.jpg", filas: ["Ruta de Pintxos 2026"] },
 ];
 
 const CATALOGO = [
