@@ -52,6 +52,7 @@ const PERFILES = [
   { nombre: "Viajes", emoji: "✈️", foto: "media/viajes/paris/img_1049.jpg", clave: "ESPRITSEL25", filas: ["Viajes"] },
   { nombre: "LetiyVic", emoji: "❤️", foto: "media/letiyvic/img_9078.jpg", clave: "MOTILLA1", filas: ["Momentos LetiyVic"] },
   { nombre: "Risas", emoji: "😂", foto: "media/risas/img_7889.jpg", clave: "CHICOTE123", filas: ["Risas"] },
+  { nombre: "Ruta de Pintxos 2026", emoji: "🍢", foto: "media/viajes/pamplona-logrono/img_6448.jpg", clave: "PINTXOS2026", filas: ["Ruta de Pintxos 2026"] },
 ];
 
 const CATALOGO = [
@@ -326,6 +327,84 @@ const CATALOGO = [
         color: "rojo",
         emoji: "💌",
         progreso: 15,
+      },
+    ],
+  },
+
+  // ==========================================================
+  //  FILA 4 — RUTA DE PINTXOS 2026  (el regalo 🎁)
+  //  Imágenes de media/regalo/ desde Wikimedia Commons:
+  //   - pintxos.jpg: "Pintxos Donostia 2014" de Gordito1869 (CC BY 3.0)
+  //   - san-sebastian.jpg: "Donosti (112287257)" (CC BY-SA 3.0)
+  //   - pais-vasco.jpg: "Guggenheim Museum Bilbao 6" de kallerna (CC BY-SA 4.0)
+  // ==========================================================
+  {
+    fila: "Ruta de Pintxos 2026",
+    items: [
+      {
+        titulo: "Tu regalo: Ruta de Pintxos 2026",
+        subtitulo: "Estreno exclusivo · Solo para ti",
+        descripcion:
+          "Enhorabuena: has desbloqueado un viaje. Abajo tienes las tres opciones candidatas. Míralas con calma, elige una… y prepara el apetito. La producción corre a cargo de la casa.",
+        etiquetas: ["Regalo", "Estreno", "Gastronomía"],
+        match: 100,
+        anio: 2026,
+        duracion: "3 opciones · 1 decisión",
+        tipo: "texto",
+        texto:
+          "RUTA DE PINTXOS 2026\n\nQuerida espectadora:\n\nEste perfil no es una serie. Es un billete.\n\nEn esta fila hay tres opciones de viaje. Solo puedes\nelegir una (sí, solo una, ya hemos mirado el presupuesto).\n\nOPCIÓN 1 — Pamplona\nOPCIÓN 2 — San Sebastián\nOPCIÓN 3 — Ruta por País Vasco (Bilbao + San Sebastián + Vitoria)\n\nAbre cada carátula para ver los detalles.\nCuando lo tengas claro, dilo en voz alta:\nla dirección de LetiyvicFlix tomará nota.\n\nFeliz cumpleaños. 🎂",
+        portada: "media/regalo/pintxos.jpg",
+        color: "dorado",
+        emoji: "🎁",
+        destacado: true,
+      },
+      {
+        titulo: "Opción 1: Pamplona",
+        subtitulo: "La revancha",
+        descripcion:
+          "Ya la conocemos, y por eso mismo hay cuentas pendientes: los pinchos de la Estafeta que quedaron sin probar. Secuela con más presupuesto que la primera parte.",
+        etiquetas: ["Opción 1", "Gastronomía", "Secuela"],
+        match: 94,
+        anio: 2026,
+        duracion: "Escapada",
+        tipo: "texto",
+        texto:
+          "OPCIÓN 1 — PAMPLONA\n\nLa ciudad donde ya fuimos felices comiendo.\nVolver a la calle Estafeta con lista cerrada de bares\n(la hicimos al volver, esta vez no se nos escapa ninguno).\n\nIncluye: pinchos, paseo por la Ciudadela y\ncero encierros (los toros, tranquilos).\n\nSi eliges esta opción, di: «¡OPCIÓN 1!»",
+        portada: "media/viajes/pamplona-logrono/img_6337.jpg",
+        color: "rojo",
+        emoji: "🥘",
+      },
+      {
+        titulo: "Opción 2: San Sebastián",
+        subtitulo: "La joya del Cantábrico",
+        descripcion:
+          "La Concha, el barrio viejo y la mayor concentración de pintxos por metro cuadrado del planeta. Los críticos le dan 3 estrellas; nosotros le daremos un repaso completo.",
+        etiquetas: ["Opción 2", "Playa", "Alta cocina en miniatura"],
+        match: 97,
+        anio: 2026,
+        duracion: "Escapada",
+        tipo: "texto",
+        texto:
+          "OPCIÓN 2 — SAN SEBASTIÁN\n\nDonostia: la bahía de La Concha, el monte Igueldo\ny un barrio viejo donde cada barra es un museo\n(de esos en los que sí se puede tocar).\n\nIncluye: paseo por La Concha al atardecer,\nruta de pintxos por la Parte Vieja y\ndebate oficial sobre cuál estaba más bueno.\n\nSi eliges esta opción, di: «¡OPCIÓN 2!»",
+        portada: "media/regalo/san-sebastian.jpg",
+        color: "azul",
+        emoji: "🌊",
+      },
+      {
+        titulo: "Opción 3: Ruta por País Vasco",
+        subtitulo: "Bilbao · San Sebastián · Vitoria",
+        descripcion:
+          "La trilogía completa en un solo viaje: el Guggenheim de Bilbao, los pintxos de Donostia y la Vitoria más verde. Para espectadoras que no saben elegir solo una ciudad.",
+        etiquetas: ["Opción 3", "Road trip", "Trilogía"],
+        match: 99,
+        anio: 2026,
+        duracion: "La saga completa",
+        tipo: "texto",
+        texto:
+          "OPCIÓN 3 — RUTA POR PAÍS VASCO\n\nEpisodio I — BILBAO: el Guggenheim, el casco viejo\ny los primeros pintxos de la gira.\n\nEpisodio II — SAN SEBASTIÁN: La Concha y la\nParte Vieja (ver Opción 2, aquí en versión extendida).\n\nEpisodio III — VITORIA: la capital verde, su almendra\nmedieval y el cierre de gira por todo lo alto.\n\nTres ciudades, un coche y una playlist discutible.\n\nSi eliges esta opción, di: «¡OPCIÓN 3!»",
+        portada: "media/regalo/pais-vasco.jpg",
+        color: "verde",
+        emoji: "🚗",
       },
     ],
   },
