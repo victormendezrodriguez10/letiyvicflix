@@ -292,6 +292,14 @@ function pintarFilas(catalogo = CATALOGO) {
   const todos = catalogo.flatMap((g) => g.items);
 
   catalogo.forEach((grupo, gi) => {
+    // Filas con estilo "top": una sola fila numerada (sin fila normal ni
+    // Top automático). El destacado no se repite: ya está en el banner.
+    if (grupo.estilo === "top") {
+      const items = grupo.items.filter((it) => !it.destacado);
+      cont.appendChild(crearFilaTop(items, grupo.tituloTop || grupo.fila));
+      return;
+    }
+
     const fila = document.createElement("section");
     fila.className = "fila";
 
@@ -325,16 +333,19 @@ function pintarFilas(catalogo = CATALOGO) {
 }
 
 function crearFilaTop10(todos) {
-  const fila = document.createElement("section");
-  fila.className = "fila fila-top10";
-
   const top = [...todos]
     .sort((a, b) => (b.match || 0) - (a.match || 0))
     .slice(0, 10);
+  return crearFilaTop(top, `Top ${top.length} en vuestro sofá hoy`);
+}
+
+function crearFilaTop(top, tituloTexto) {
+  const fila = document.createElement("section");
+  fila.className = "fila fila-top10";
 
   const titulo = document.createElement("h2");
   titulo.className = "fila-titulo";
-  titulo.textContent = `Top ${top.length} en vuestro sofá hoy`;
+  titulo.textContent = tituloTexto;
 
   const scroll = document.createElement("div");
   scroll.className = "fila-scroll";

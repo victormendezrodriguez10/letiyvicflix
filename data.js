@@ -340,6 +340,9 @@ const CATALOGO = [
   // ==========================================================
   {
     fila: "Ruta de Pintxos 2026",
+    // Fila especial: solo el banner + una fila numerada estilo Top
+    estilo: "top",
+    tituloTop: "Top 3 opciones de regalo a elegir",
     items: [
       {
         titulo: "Tu regalo: Ruta de Pintxos 2026",
