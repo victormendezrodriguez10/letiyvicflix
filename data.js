@@ -47,10 +47,11 @@ const PERFIL = {
 // para entrar (da igual las mayúsculas/minúsculas).
 // "filas" indica qué filas del catálogo ve ese perfil (por su nombre
 // exacto). Un perfil sin "filas" lo vería todo.
+// "foto" (opcional): imagen para el avatar; si no la pones, sale el emoji.
 const PERFILES = [
-  { nombre: "Viajes", emoji: "✈️", clave: "ESPRITSEL25", filas: ["Viajes"] },
-  { nombre: "LetiyVic", emoji: "❤️", clave: "MOTILLA1", filas: ["Momentos LetiyVic"] },
-  { nombre: "Risas", emoji: "😂", clave: "CHICOTE123", filas: ["Risas"] },
+  { nombre: "Viajes", emoji: "✈️", foto: "media/viajes/paris/img_1049.jpg", clave: "ESPRITSEL25", filas: ["Viajes"] },
+  { nombre: "LetiyVic", emoji: "❤️", foto: "media/letiyvic/img_9078.jpg", clave: "MOTILLA1", filas: ["Momentos LetiyVic"] },
+  { nombre: "Risas", emoji: "😂", foto: "media/risas/img_7889.jpg", clave: "CHICOTE123", filas: ["Risas"] },
 ];
 
 const CATALOGO = [
@@ -193,6 +194,7 @@ const CATALOGO = [
         tipo: "texto",
         texto:
           "RÁPIDOS Y DORMILONES\n\n07:00 — Alarma.\n07:09 — «Cinco minutos más.»\n07:45 — Modo turbo activado.\n07:58 — Récord mundial de desayuno.\n08:03 — «Si salimos ya, llegamos.»\n\n(No llegaron.)",
+        portada: "media/risas/img_8465.jpg",
         color: "rojo",
         emoji: "⏰",
       },
@@ -231,7 +233,8 @@ const CATALOGO = [
         anio: 2026,
         duracion: "25 vídeos",
         tipo: "galeria",
-        archivos: ["media/risas/3b27c3ad-6726-4df2-91e3-878561d8e84c.mp4", "media/risas/6b08962d-0a1c-4daf-955b-c8efce1a5868.mp4", "media/risas/85fe202b-9170-4590-84ac-bac80f504f5b.mp4", "media/risas/acd3826c-12a0-4ae6-891b-db5d1c975afc.mp4", "media/risas/b8a77536-095b-4285-aa4c-1bdd10ca20df.mp4", "media/risas/img_0861.mp4", "media/risas/img_0896.mp4", "media/risas/img_0940.mp4", "media/risas/img_1158.mp4", "media/risas/img_1160.mp4", "media/risas/img_4990.mp4", "media/risas/img_4991.mp4", "media/risas/img_5022.mp4", "media/risas/img_5030.mp4", "media/risas/img_5121.mp4", "media/risas/img_6355.mp4", "media/risas/img_6389.mp4", "media/risas/img_6434.mp4", "media/risas/img_6478.mp4", "media/risas/img_7250.mp4", "media/risas/img_7478.mp4", "media/risas/img_8459.mp4", "media/risas/img_9266.mp4", "media/risas/img_9336.mp4", "media/risas/img_9468.mp4"],
+        portada: "media/risas/img_1035.jpg",
+        archivos: ["media/risas/3b27c3ad-6726-4df2-91e3-878561d8e84c.mp4","media/risas/6b08962d-0a1c-4daf-955b-c8efce1a5868.mp4", "media/risas/85fe202b-9170-4590-84ac-bac80f504f5b.mp4", "media/risas/acd3826c-12a0-4ae6-891b-db5d1c975afc.mp4", "media/risas/b8a77536-095b-4285-aa4c-1bdd10ca20df.mp4", "media/risas/img_0861.mp4", "media/risas/img_0896.mp4", "media/risas/img_0940.mp4", "media/risas/img_1158.mp4", "media/risas/img_1160.mp4", "media/risas/img_4990.mp4", "media/risas/img_4991.mp4", "media/risas/img_5022.mp4", "media/risas/img_5030.mp4", "media/risas/img_5121.mp4", "media/risas/img_6355.mp4", "media/risas/img_6389.mp4", "media/risas/img_6434.mp4", "media/risas/img_6478.mp4", "media/risas/img_7250.mp4", "media/risas/img_7478.mp4", "media/risas/img_8459.mp4", "media/risas/img_9266.mp4", "media/risas/img_9336.mp4", "media/risas/img_9468.mp4"],
         color: "morado",
         emoji: "🎥",
         progreso: 62,
@@ -248,6 +251,7 @@ const CATALOGO = [
         tipo: "texto",
         texto:
           "TRANSCRIPCIÓN OFICIAL — OPERACIÓN IKEA\n\n«Esto se monta en 20 minutos.»\n(2 horas después)\n«¿Por qué sobran 4 tornillos?»\n«Eso es que hemos optimizado.»\n\nEl mueble sigue en pie a día de hoy. Nadie sabe cómo.",
+        portada: "media/risas/img_8042.jpg",
         color: "azul",
         emoji: "🔧",
       },
@@ -286,7 +290,8 @@ const CATALOGO = [
         anio: 2026,
         duracion: "6 vídeos",
         tipo: "galeria",
-        archivos: ["media/letiyvic/198e4993-e7b9-47b6-9d5f-416caaeac5a5.mp4", "media/letiyvic/30734ac5-7fec-40e8-869a-f45708c31475.mp4", "media/letiyvic/93dbf839-8de4-4272-83b1-cfde55fb64b0.mp4", "media/letiyvic/94a0e134cc6c4c16806d6d6a4fea5414.mp4", "media/letiyvic/9ee837e0-8041-4912-820b-3625b50b0284.mp4", "media/letiyvic/img_7477.mp4"],
+        portada: "media/letiyvic/img_5582.jpg",
+        archivos: ["media/letiyvic/198e4993-e7b9-47b6-9d5f-416caaeac5a5.mp4","media/letiyvic/30734ac5-7fec-40e8-869a-f45708c31475.mp4", "media/letiyvic/93dbf839-8de4-4272-83b1-cfde55fb64b0.mp4", "media/letiyvic/94a0e134cc6c4c16806d6d6a4fea5414.mp4", "media/letiyvic/9ee837e0-8041-4912-820b-3625b50b0284.mp4", "media/letiyvic/img_7477.mp4"],
         color: "morado",
         emoji: "🎬",
       },
@@ -302,6 +307,7 @@ const CATALOGO = [
         tipo: "texto",
         texto:
           "EPISODIO TIPO DE 'LOS LUNES DE SOFÁ'\n\n21:02 — «¿Qué vemos?»\n21:14 — Scroll infinito por el catálogo.\n21:31 — «Elige tú.» «No, elige tú.»\n21:47 — Empieza una serie nueva.\n21:59 — Primera cabezada detectada.\n22:15 — Los dos dormidos. La serie sigue sola.\n\nFIN DEL EPISODIO. (Se repite todos los lunes.)",
+        portada: "media/risas/img_5091.jpg",
         color: "morado",
         emoji: "🛋️",
       },
@@ -316,6 +322,7 @@ const CATALOGO = [
         tipo: "texto",
         texto:
           "Hola:\n\nEste hueco está reservado para escribir algo bonito de verdad.\nEdita el archivo data.js, busca «Cartas desde el sofá» y cambia este texto por el tuyo.\n\nCon cariño,\nLa dirección de LetiyvicFlix",
+        portada: "media/letiyvic/img_5066.jpg",
         color: "rojo",
         emoji: "💌",
         progreso: 15,

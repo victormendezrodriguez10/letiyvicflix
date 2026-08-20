@@ -21,10 +21,13 @@ function pintarPerfiles() {
   perfiles.forEach((p, i) => {
     const clase = `av-${(i % 5) + 1}`;
     const candado = p.clave ? `<span class="perfil-candado">🔒</span>` : "";
+    const cara = p.foto
+      ? `<img class="avatar-foto" src="${p.foto}" alt="${p.nombre}">`
+      : p.emoji;
     const btn = document.createElement("button");
     btn.className = "perfil";
     btn.innerHTML = `
-      <div class="perfil-avatar ${clase}">${p.emoji}${candado}</div>
+      <div class="perfil-avatar ${clase}">${cara}${candado}</div>
       <div class="perfil-nombre">${p.nombre}</div>`;
     btn.addEventListener("click", () => elegirPerfil(p, clase));
     lista.appendChild(btn);
@@ -51,8 +54,13 @@ function elegirPerfil(perfil, clase) {
 }
 
 function entrarConPerfil(perfil, clase) {
-  $("avatar-mini").textContent = perfil.emoji;
-  $("avatar-mini").className = "avatar-mini perfil-avatar " + clase;
+  const mini = $("avatar-mini");
+  if (perfil.foto) {
+    mini.innerHTML = `<img class="avatar-foto" src="${perfil.foto}" alt="${perfil.nombre}">`;
+  } else {
+    mini.textContent = perfil.emoji;
+  }
+  mini.className = "avatar-mini perfil-avatar " + clase;
 
   // Cada perfil ve solo sus filas del catálogo
   const catalogo = catalogoDe(perfil);
@@ -80,7 +88,11 @@ function mostrarPantallaClave(perfil, clase) {
   clasePendiente = clase;
 
   const avatar = $("clave-avatar");
-  avatar.textContent = perfil.emoji;
+  if (perfil.foto) {
+    avatar.innerHTML = `<img class="avatar-foto" src="${perfil.foto}" alt="${perfil.nombre}">`;
+  } else {
+    avatar.textContent = perfil.emoji;
+  }
   avatar.className = "clave-avatar " + clase;
 
   $("clave-sub").textContent =

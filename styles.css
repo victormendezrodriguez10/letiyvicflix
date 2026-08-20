@@ -98,6 +98,15 @@ body {
   transform: scale(1.04);
 }
 
+/* Foto real dentro de cualquier avatar (perfil, mini y pantalla de clave) */
+.avatar-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
 .perfil-nombre {
   color: var(--gris-texto);
   font-size: clamp(.9rem, 1.3vw, 1.3rem);
