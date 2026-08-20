@@ -328,15 +328,16 @@ function pintarFilas(catalogo = CATALOGO) {
     cont.appendChild(fila);
 
     // Tras la primera fila, insertamos el TOP 10 automático
-    if (gi === 0) cont.appendChild(crearFilaTop10(todos));
+    // (el campo "tituloTop" de la fila permite personalizar su título)
+    if (gi === 0) cont.appendChild(crearFilaTop10(todos, grupo.tituloTop));
   });
 }
 
-function crearFilaTop10(todos) {
+function crearFilaTop10(todos, titulo) {
   const top = [...todos]
     .sort((a, b) => (b.match || 0) - (a.match || 0))
     .slice(0, 10);
-  return crearFilaTop(top, `Top ${top.length} en vuestro sofá hoy`);
+  return crearFilaTop(top, titulo || `Top ${top.length} en vuestro sofá hoy`);
 }
 
 function crearFilaTop(top, tituloTexto) {
