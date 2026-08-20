@@ -751,7 +751,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 200px;
-  max-height: 60vh;
+  /* Sin max-height aquí: las fichas de texto crecen lo que necesiten.
+     Los vídeos, fotos y galerías ya limitan su propia altura a 60vh. */
 }
 .modal-media video,
 .modal-media img {
@@ -927,10 +928,11 @@ body {
   .topbar { padding: 10px 4vw; height: 56px; }
   .topbar-right { gap: 14px; }
 
-  /* Perfiles: cuadrícula 2x2 centrada */
+  /* Perfiles: cuadrícula 2x2 centrada (solo la pantalla de perfiles,
+     sin tocar el avatar mini de la barra superior) */
   .perfiles-lista { gap: 18px; max-width: 320px; }
-  .perfil { width: 120px; }
-  .perfil-avatar { width: 110px; height: 110px; }
+  #pantalla-perfiles .perfil { width: 120px; }
+  #pantalla-perfiles .perfil-avatar { width: 110px; height: 110px; }
   .perfiles-logo { position: static; margin-bottom: -10px; }
   #pantalla-perfiles { gap: 24px; padding: 24px 16px; }
 
