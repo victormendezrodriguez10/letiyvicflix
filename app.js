@@ -200,11 +200,12 @@ $("avatar-mini").addEventListener("click", () => {
 //  CARÁTULAS
 // ============================================================
 
-function crearPortada(item, vertical = false) {
-  if (item.portada) {
+function crearPortada(item, src) {
+  const foto = src || item.portada;
+  if (foto) {
     const img = document.createElement("img");
     img.className = "portada";
-    img.src = item.portada;
+    img.src = foto;
     img.alt = item.titulo;
     img.onerror = () => img.replaceWith(portadaGenerada(item));
     return img;
@@ -250,7 +251,7 @@ function crearTarjeta(item, opciones = {}) {
 
   const inner = document.createElement("div");
   inner.className = "tarjeta-inner";
-  inner.appendChild(crearPortada(item));
+  inner.appendChild(crearPortada(item, opciones.portada));
 
   // Barra de progreso en "Continuar viendo"
   if (opciones.progreso != null) {
@@ -319,9 +320,11 @@ function pintarFilas(catalogo = CATALOGO) {
           : esContinuar
           ? 30 + ((i * 27) % 55)
           : null;
-      scroll.appendChild(
-        crearTarjeta(item, progreso != null ? { progreso } : {})
-      );
+      // En la fila normal, "portadaFila" permite enseñar una foto distinta
+      // de la del Top (para que no se repitan las carátulas)
+      const opts = progreso != null ? { progreso } : {};
+      if (item.portadaFila) opts.portada = item.portadaFila;
+      scroll.appendChild(crearTarjeta(item, opts));
     });
 
     fila.append(titulo, scroll);

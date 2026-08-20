@@ -27,6 +27,8 @@
 //  texto       : para tipo "texto" → el texto que se muestra
 //  portada     : (opcional) imagen para la carátula. Si no la pones,
 //                se genera una carátula bonita automáticamente.
+//  portadaFila : (opcional) foto distinta para la carátula de la fila
+//                normal, para que no se repita con la del Top.
 //  color       : (opcional) color base de la carátula generada. Uno de:
 //                "rojo", "azul", "verde", "morado", "naranja", "rosa",
 //                "dorado", "turquesa"
@@ -76,6 +78,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/viajes/alsacia/94926bf5-f5d9-4fc9-8249-7512145bfa36.jpg", "media/viajes/alsacia/img_0586.jpg", "media/viajes/alsacia/img_0614.jpg", "media/viajes/alsacia/img_0625.jpg", "media/viajes/alsacia/img_0671.jpg", "media/viajes/alsacia/img_0686.jpg", "media/viajes/alsacia/img_0690.jpg", "media/viajes/alsacia/img_0695.jpg", "media/viajes/alsacia/img_0700.jpg", "media/viajes/alsacia/img_0788.jpg", "media/viajes/alsacia/img_0824.jpg", "media/viajes/alsacia/img_0846.jpg", "media/viajes/alsacia/img_0852.jpg", "media/viajes/alsacia/img_0858.jpg", "media/viajes/alsacia/img_0860.jpg", "media/viajes/alsacia/img_0910.jpg", "media/viajes/alsacia/img_0921.jpg", "media/viajes/alsacia/img_1061.jpg", "media/viajes/alsacia/img_7205.jpg", "media/viajes/alsacia/img_7218.jpg", "media/viajes/alsacia/img_7220.jpg", "media/viajes/alsacia/img_7221.jpg", "media/viajes/alsacia/img_7225.jpg", "media/viajes/alsacia/img_0655.mp4", "media/viajes/alsacia/img_0662.mp4", "media/viajes/alsacia/img_0663.mp4", "media/viajes/alsacia/img_0897.mp4", "media/viajes/alsacia/img_7240.mp4", "media/viajes/alsacia/img_7563.mp4"],
         portada: "media/viajes/alsacia/img_0921.jpg",
+        portadaFila: "media/viajes/alsacia/img_0700.jpg",
         color: "dorado",
         emoji: "🎄",
         destacado: true,
@@ -92,6 +95,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/viajes/budapest/12abba6b-329c-4248-a0ea-3fcdafd2309f.jpg", "media/viajes/budapest/1f775240-4889-4f25-98c7-9ce459e81390.jpg", "media/viajes/budapest/39f2888e-d561-4085-a686-4372394344f8.jpg", "media/viajes/budapest/4dab852c-9016-4f62-875f-782c84f160cd.jpg", "media/viajes/budapest/6eb8faa0-dd28-43a8-8314-9988105136ba.jpg", "media/viajes/budapest/74a2a3cd-e49d-4d2c-88f1-2990930e0d40.jpg", "media/viajes/budapest/755558de-6dc5-4894-b03d-459ad49ad840.jpg", "media/viajes/budapest/7b5de31e-8b3e-4fa7-8dbe-2ce0aa9ef4b3.jpg", "media/viajes/budapest/aef055a4-f816-485e-af67-95378d2185f9.jpg", "media/viajes/budapest/b1a98aaf-3f1c-4434-a3ba-fb8278dca26f.jpg", "media/viajes/budapest/d6e0db0e-eccd-4a81-a920-6c04615a4c9f.jpg", "media/viajes/budapest/e4486825-026b-4255-8e25-2c891274d44a.jpg", "media/viajes/budapest/f8eca369-1d80-4a22-8379-32b39f87b6f0.jpg", "media/viajes/budapest/9473175f-cfb4-4931-b4b9-40db7b97d84d.mp4"],
         portada: "media/viajes/budapest/755558de-6dc5-4894-b03d-459ad49ad840.jpg",
+        portadaFila: "media/viajes/budapest/12abba6b-329c-4248-a0ea-3fcdafd2309f.jpg",
         color: "azul",
         emoji: "🌉",
       },
@@ -107,6 +111,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/viajes/cangas-de-onis/5de0d183-d8ed-4f96-83c4-5d209f993415.jpg", "media/viajes/cangas-de-onis/img_6471.jpg", "media/viajes/cangas-de-onis/img_6556.jpg", "media/viajes/cangas-de-onis/img_9268.jpg", "media/viajes/cangas-de-onis/img_9302.jpg", "media/viajes/cangas-de-onis/img_9304.jpg", "media/viajes/cangas-de-onis/img_9320.jpg", "media/viajes/cangas-de-onis/img_9269.mp4", "media/viajes/cangas-de-onis/img_9310.mp4"],
         portada: "media/viajes/cangas-de-onis/img_9268.jpg",
+        portadaFila: "media/viajes/cangas-de-onis/img_6471.jpg",
         color: "verde",
         emoji: "🏔️",
       },
@@ -122,6 +127,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/viajes/conil/7491f24f-d18d-42cb-94d1-5f85be435296.jpg", "media/viajes/conil/img_4323.jpg", "media/viajes/conil/img_4571.jpg", "media/viajes/conil/img_4578.jpg", "media/viajes/conil/img_6422.jpg", "media/viajes/conil/img_8197.jpg", "media/viajes/conil/img_8208.jpg", "media/viajes/conil/img_9295.jpg"],
         portada: "media/viajes/conil/img_8197.jpg",
+        portadaFila: "media/viajes/conil/img_4323.jpg",
         color: "naranja",
         emoji: "🏖️",
       },
@@ -137,6 +143,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/viajes/granada/img_2433.jpg", "media/viajes/granada/img_2455.jpg", "media/viajes/granada/img_2458.jpg"],
         portada: "media/viajes/granada/img_2433.jpg",
+        portadaFila: "media/viajes/granada/img_2458.jpg",
         color: "rojo",
         emoji: "🌇",
       },
@@ -152,6 +159,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/viajes/pamplona-logrono/img_6337.jpg", "media/viajes/pamplona-logrono/img_6348.jpg", "media/viajes/pamplona-logrono/img_6365.jpg", "media/viajes/pamplona-logrono/img_6391.jpg", "media/viajes/pamplona-logrono/img_6448.jpg", "media/viajes/pamplona-logrono/img_6325.mp4", "media/viajes/pamplona-logrono/img_6388.mp4", "media/viajes/pamplona-logrono/img_6389.mp4"],
         portada: "media/viajes/pamplona-logrono/img_6365.jpg",
+        portadaFila: "media/viajes/pamplona-logrono/img_6391.jpg",
         color: "morado",
         emoji: "🍷",
       },
@@ -167,6 +175,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/viajes/paris/img_0634.jpg", "media/viajes/paris/img_0946.jpg", "media/viajes/paris/img_0956.jpg", "media/viajes/paris/img_0977.jpg", "media/viajes/paris/img_0983.jpg", "media/viajes/paris/img_1004.jpg", "media/viajes/paris/img_1018.jpg", "media/viajes/paris/img_1049.jpg", "media/viajes/paris/img_1080.jpg", "media/viajes/paris/img_1118.jpg", "media/viajes/paris/img_1126.jpg", "media/viajes/paris/img_1136.mp4", "media/viajes/paris/img_1137.mp4", "media/viajes/paris/img_1140.mp4"],
         portada: "media/viajes/paris/img_0946.jpg",
+        portadaFila: "media/viajes/paris/img_0634.jpg",
         color: "rosa",
         emoji: "🗼",
       },
@@ -182,6 +191,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/viajes/santillana/img_6136.jpg", "media/viajes/santillana/img_7741.jpg", "media/viajes/santillana/img_7749.jpg", "media/viajes/santillana/img_7754.jpg", "media/viajes/santillana/img_7770.jpg", "media/viajes/santillana/img_7809.jpg", "media/viajes/santillana/img_7832.jpg", "media/viajes/santillana/img_7866.jpg", "media/viajes/santillana/img_9244.jpg"],
         portada: "media/viajes/santillana/img_9244.jpg",
+        portadaFila: "media/viajes/santillana/img_6136.jpg",
         color: "turquesa",
         emoji: "🏘️",
       },
@@ -198,6 +208,7 @@ const CATALOGO = [
         texto:
           "LA PELI DE TORREVIEJA\n\nEscenario: Torrevieja, una noche cualquiera.\n\n21:30 — «Elige tú, pero que me guste.»\n22:15 — Tras 45 minutos de catálogo, elegida\n        LA película perfecta para ella.\n22:20 — Leti: dormida. Cinco minutos. Récord.\n22:21 — Vic mira la tele. Mira a Leti. Mira la tele.\n00:05 — Vic se ha tragado ENTERA su peli horrorosa.\n\nNominada a mejor actor de reparto:\nel sofá de Torrevieja.",
         portada: "media/risas/img_8465.jpg",
+        portadaFila: "media/letiyvic/img_9342.jpg",
         color: "rojo",
         emoji: "🎬",
       },
@@ -222,6 +233,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/risas/171f0c28-8642-47f2-b718-5abce10c491a.jpg", "media/risas/20617c90-f720-4844-9d5b-16fd1922c4e6.jpg", "media/risas/37e91c65-d02f-4601-bb01-26ec480a7d4b.jpg", "media/risas/3a3b2ee7-9fec-460d-844a-8a13186cbcaf.jpg", "media/risas/41552c06-a62e-4691-bcf5-3e20dc43606d.jpg", "media/risas/525356aa-eb7c-4720-a46c-3868cfa1a071.jpg", "media/risas/6ade9265-0556-4ab2-81ff-c7a641c0b8cb.jpg", "media/risas/9e241d5f-b537-4817-a358-e443268989c2.jpg", "media/risas/d553f24b-cd1d-4e6a-8cec-f539340c6512.jpg", "media/risas/d55a5426-ec30-403a-96cd-9adf69e8cfab.jpg", "media/risas/ec73c44e-eede-44ef-9f0d-a62ef21ec0ce.jpg", "media/risas/img_0791.jpg", "media/risas/img_1035.jpg", "media/risas/img_1091.jpg", "media/risas/img_5091.jpg", "media/risas/img_5173.jpg", "media/risas/img_5500.jpg", "media/risas/img_6680.jpg", "media/risas/img_6744.jpg", "media/risas/img_7065.jpg", "media/risas/img_7847.jpg", "media/risas/img_7888.jpg", "media/risas/img_7889.jpg", "media/risas/img_7890.jpg", "media/risas/img_7990.jpg", "media/risas/img_8042.jpg", "media/risas/img_8465.jpg", "media/risas/img_8883.jpg"],
         portada: "media/risas/img_7888.jpg",
+        portadaFila: "media/risas/img_5500.jpg",
         color: "naranja",
         emoji: "😂",
         destacado: true,
@@ -237,6 +249,7 @@ const CATALOGO = [
         duracion: "25 vídeos",
         tipo: "galeria",
         portada: "media/risas/img_1035.jpg",
+        portadaFila: "media/risas/171f0c28-8642-47f2-b718-5abce10c491a.jpg",
         archivos: ["media/risas/3b27c3ad-6726-4df2-91e3-878561d8e84c.mp4","media/risas/6b08962d-0a1c-4daf-955b-c8efce1a5868.mp4", "media/risas/85fe202b-9170-4590-84ac-bac80f504f5b.mp4", "media/risas/acd3826c-12a0-4ae6-891b-db5d1c975afc.mp4", "media/risas/b8a77536-095b-4285-aa4c-1bdd10ca20df.mp4", "media/risas/img_0861.mp4", "media/risas/img_0896.mp4", "media/risas/img_0940.mp4", "media/risas/img_1158.mp4", "media/risas/img_1160.mp4", "media/risas/img_4990.mp4", "media/risas/img_4991.mp4", "media/risas/img_5022.mp4", "media/risas/img_5030.mp4", "media/risas/img_5121.mp4", "media/risas/img_6355.mp4", "media/risas/img_6389.mp4", "media/risas/img_6434.mp4", "media/risas/img_6478.mp4", "media/risas/img_7250.mp4", "media/risas/img_7478.mp4", "media/risas/img_8459.mp4", "media/risas/img_9266.mp4", "media/risas/img_9336.mp4", "media/risas/img_9468.mp4"],
         color: "morado",
         emoji: "🎥",
@@ -255,6 +268,7 @@ const CATALOGO = [
         texto:
           "TRANSCRIPCIÓN OFICIAL — OPERACIÓN IKEA\n\n«Esto se monta en 20 minutos.»\n(2 horas después)\n«¿Por qué sobran 4 tornillos?»\n«Eso es que hemos optimizado.»\n\nEl mueble sigue en pie a día de hoy. Nadie sabe cómo.",
         portada: "media/risas/img_8042.jpg",
+        portadaFila: "media/risas/41552c06-a62e-4691-bcf5-3e20dc43606d.jpg",
         color: "azul",
         emoji: "🔧",
       },
@@ -279,6 +293,7 @@ const CATALOGO = [
         tipo: "galeria",
         archivos: ["media/letiyvic/07362a7b-c03b-4d22-a1e8-5527b9c53bdf.jpg", "media/letiyvic/0eff68e9-a28c-443f-9114-c8f664c78397.jpg", "media/letiyvic/15e67b75-6bb8-4787-8a87-bbfa4162e5f6.jpg", "media/letiyvic/18c9e0c7-1a14-4478-adcc-53b95b037ab5.jpg", "media/letiyvic/1f5a2080-d68a-4c39-a249-95cb8e5ac45e.jpg", "media/letiyvic/2a71ce0c-2ed9-4a98-867e-5ae076d99e8e.jpg", "media/letiyvic/311196cf-e15e-4f31-8892-cb41d5120ef0.jpg", "media/letiyvic/35671d1a-2c10-4cae-97e0-c68f2dddbf7c.jpg", "media/letiyvic/3b3726e5-73fa-42f7-b38e-e9195c90f227.jpg", "media/letiyvic/4c09e287-3c3f-446b-bf92-a36c14428661.jpg", "media/letiyvic/56533ac0-2724-402b-80dd-de4753165d0f.jpg", "media/letiyvic/59253bd2-9050-42e7-87fa-c6434a36dcca.jpg", "media/letiyvic/82765ed1-818a-45d4-b72c-ad3d756df17e.jpg", "media/letiyvic/8819ba0b-ece4-461a-bf45-01711111aeb4.jpg", "media/letiyvic/8e41a8b0-e9bd-4872-bf86-63f1ce5486d6.jpg", "media/letiyvic/9882e6d1-fab8-43e8-b04a-a04487ed6af1.jpg", "media/letiyvic/9a81fcb6-55eb-412b-9961-5204e07458c9.jpg", "media/letiyvic/a3195ee3-3536-45a4-8559-161ab0ef283b.jpg", "media/letiyvic/a449b868-368c-43ef-b8e4-5eb539bf7903.jpg", "media/letiyvic/ac1a237a-c814-4266-8e23-51bc96400a8f.jpg", "media/letiyvic/bd26bf29-97c0-4b1a-8e5a-680f9951eede.jpg", "media/letiyvic/c03d7298-f5fd-40bc-84fc-439e3c2b24f9.jpg", "media/letiyvic/c233296f-1bfd-4b71-97a1-7d01ef8bf87c.jpg", "media/letiyvic/c67d39e3-3f47-404d-93e8-78f7d8beb309.jpg", "media/letiyvic/d3017f28-8a1d-4646-80ad-8d697f79b799.jpg", "media/letiyvic/d945a21e-f063-4b0c-907d-1806e68c8d8e.jpg", "media/letiyvic/fce95f10-12de-42d9-b6bc-05ab7bba12c6.jpg", "media/letiyvic/fe997569-904c-4d9b-8eed-831890a0854d.jpg", "media/letiyvic/img_0373.jpg", "media/letiyvic/img_4972.jpg", "media/letiyvic/img_5066.jpg", "media/letiyvic/img_5149.jpg", "media/letiyvic/img_5165.jpg", "media/letiyvic/img_5582.jpg", "media/letiyvic/img_5610.jpg", "media/letiyvic/img_5716.jpg", "media/letiyvic/img_6711.jpg", "media/letiyvic/img_8083.jpg", "media/letiyvic/img_8458.jpg", "media/letiyvic/img_8910.jpg", "media/letiyvic/img_8973.jpg", "media/letiyvic/img_9078.jpg", "media/letiyvic/img_9342.jpg"],
         portada: "media/letiyvic/img_0373.jpg",
+        portadaFila: "media/letiyvic/8819ba0b-ece4-461a-bf45-01711111aeb4.jpg",
         color: "rosa",
         emoji: "💘",
         destacado: true,
@@ -294,6 +309,7 @@ const CATALOGO = [
         duracion: "6 vídeos",
         tipo: "galeria",
         portada: "media/letiyvic/img_5716.jpg",
+        portadaFila: "media/letiyvic/fce95f10-12de-42d9-b6bc-05ab7bba12c6.jpg",
         archivos: ["media/letiyvic/198e4993-e7b9-47b6-9d5f-416caaeac5a5.mp4","media/letiyvic/30734ac5-7fec-40e8-869a-f45708c31475.mp4", "media/letiyvic/93dbf839-8de4-4272-83b1-cfde55fb64b0.mp4", "media/letiyvic/94a0e134cc6c4c16806d6d6a4fea5414.mp4", "media/letiyvic/9ee837e0-8041-4912-820b-3625b50b0284.mp4", "media/letiyvic/img_7477.mp4"],
         color: "morado",
         emoji: "🎬",
@@ -311,6 +327,7 @@ const CATALOGO = [
         texto:
           "EPISODIO TIPO DE 'LOS LUNES DE SOFÁ'\n\n21:02 — «¿Qué vemos?»\n21:14 — Scroll infinito por el catálogo.\n21:31 — «Elige tú.» «No, elige tú.»\n21:47 — Empieza una serie nueva.\n21:59 — Primera cabezada detectada.\n22:15 — Los dos dormidos. La serie sigue sola.\n\nFIN DEL EPISODIO. (Se repite todos los lunes.)",
         portada: "media/risas/img_5091.jpg",
+        portadaFila: "media/letiyvic/img_8458.jpg",
         color: "morado",
         emoji: "🛋️",
       },
@@ -326,6 +343,7 @@ const CATALOGO = [
         texto:
           "Hola:\n\nEste hueco está reservado para escribir algo bonito de verdad.\nEdita el archivo data.js, busca «Cartas desde el sofá» y cambia este texto por el tuyo.\n\nCon cariño,\nLa dirección de LetiyvicFlix",
         portada: "media/letiyvic/img_5066.jpg",
+        portadaFila: "media/letiyvic/56533ac0-2724-402b-80dd-de4753165d0f.jpg",
         color: "rojo",
         emoji: "💌",
         progreso: 15,
