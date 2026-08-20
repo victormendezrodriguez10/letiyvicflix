@@ -397,7 +397,17 @@ function abrirModal(item) {
   if (item.tipo === "texto") {
     const div = document.createElement("div");
     div.className = "modal-texto";
-    div.textContent = item.texto || "(Aún no hay texto: edítalo en data.js)";
+    if (item.portada) {
+      const foto = document.createElement("img");
+      foto.className = "modal-texto-foto";
+      foto.src = item.portada;
+      foto.alt = item.titulo;
+      foto.onerror = () => foto.remove();
+      div.appendChild(foto);
+    }
+    const cuerpo = document.createElement("div");
+    cuerpo.textContent = item.texto || "(Aún no hay texto: edítalo en data.js)";
+    div.appendChild(cuerpo);
     media.appendChild(div);
   } else if (item.tipo === "galeria") {
     media.appendChild(crearGaleria(item));

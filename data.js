@@ -352,7 +352,7 @@ const CATALOGO = [
         duracion: "3 opciones · 1 decisión",
         tipo: "texto",
         texto:
-          "RUTA DE PINTXOS 2026\n\nQuerida espectadora:\n\nEste perfil no es una serie. Es un billete.\n\nEn esta fila hay tres opciones de viaje. Solo puedes\nelegir una (sí, solo una, ya hemos mirado el presupuesto).\n\nOPCIÓN 1 — Pamplona\nOPCIÓN 2 — San Sebastián\nOPCIÓN 3 — Ruta por País Vasco (Bilbao + San Sebastián + Vitoria)\n\nAbre cada carátula para ver los detalles.\nCuando lo tengas claro, dilo en voz alta:\nla dirección de LetiyvicFlix tomará nota.\n\nFeliz cumpleaños. 🎂",
+          "RUTA DE PINTXOS 2026\n\nQuerida espectadora:\n\nEste perfil no es una serie. Es un billete.\n\nEn esta fila hay tres opciones de viaje. Solo puedes\nelegir una (sí, solo una, ya hemos mirado el presupuesto).\n\nOPCIÓN 1 — Pamplona\nOPCIÓN 2 — San Sebastián\nOPCIÓN 3 — Ruta por País Vasco (Bilbao + San Sebastián + Vitoria)\n\nAbre cada carátula para ver los detalles.\nCuando lo tengas claro, dilo en voz alta:\nla dirección de LetiyvicFlix tomará nota.\n\nFeliz cumpleaños.",
         portada: "media/regalo/pintxos.jpg",
         color: "dorado",
         emoji: "🎁",
