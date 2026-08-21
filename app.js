@@ -493,7 +493,11 @@ function avisoArchivo(item) {
 let galeriaNav = null; // {ant, sig} mientras hay una galería abierta
 
 function crearGaleria(item) {
-  const rutas = item.archivos || [];
+  // Las portadas que no estén ya en "archivos" se muestran primero
+  const portadas = [item.portada, item.portadaFila].filter(
+    (p, i, arr) => p && arr.indexOf(p) === i && !(item.archivos || []).includes(p)
+  );
+  const rutas = [...portadas, ...(item.archivos || [])];
   const cont = document.createElement("div");
   cont.className = "galeria";
 
