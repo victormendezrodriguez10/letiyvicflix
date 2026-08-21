@@ -327,7 +327,7 @@ function pintarFilas(catalogo = CATALOGO) {
       scroll.appendChild(crearTarjeta(item, opts));
     });
 
-    fila.append(titulo, scroll);
+    fila.append(titulo, conFlechas(scroll));
     cont.appendChild(fila);
 
     // Tras la primera fila, insertamos el TOP 10 automático
@@ -366,7 +366,7 @@ function crearFilaTop(top, tituloTexto) {
     scroll.appendChild(wrap);
   });
 
-  fila.append(titulo, scroll);
+  fila.append(titulo, conFlechas(scroll));
   return fila;
 }
 
@@ -486,6 +486,33 @@ function avisoArchivo(item) {
     LetiyvicFlix y recarga la página.
   `;
   return div;
+}
+
+// ---------- Flechas ‹ › de las filas ----------
+// En teles y otros navegadores sin rueda/táctil no se puede arrastrar
+// la fila: estas flechas la desplazan con un clic del mando o ratón.
+
+function conFlechas(scroll) {
+  const wrap = document.createElement("div");
+  wrap.className = "fila-wrap";
+
+  const paso = (dir) =>
+    scroll.scrollBy({ left: dir * scroll.clientWidth * 0.9, behavior: "smooth" });
+
+  const btnIzq = document.createElement("button");
+  btnIzq.className = "fila-flecha fila-flecha-izq";
+  btnIzq.setAttribute("aria-label", "Anteriores");
+  btnIzq.textContent = "‹";
+  btnIzq.addEventListener("click", () => paso(-1));
+
+  const btnDer = document.createElement("button");
+  btnDer.className = "fila-flecha fila-flecha-der";
+  btnDer.setAttribute("aria-label", "Siguientes");
+  btnDer.textContent = "›";
+  btnDer.addEventListener("click", () => paso(1));
+
+  wrap.append(btnIzq, scroll, btnDer);
+  return wrap;
 }
 
 // ---------- Galería (pase de fotos/vídeos con flechas) ----------
